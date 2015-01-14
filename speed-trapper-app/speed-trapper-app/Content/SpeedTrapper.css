@@ -1,0 +1,17 @@
+﻿body {
+}
+.speedOver { color:red; font-size:18px;
+}
+.speedBelow { color:green; font-size:18px;
+}
+.carName {   font-weight:bold;  color:black; font-size:20px;
+}
+.succMessage {
+     color:green;
+}
+.errMessage {
+     color:red;
+}
+.numericTextBox {
+       width:50px;
+}

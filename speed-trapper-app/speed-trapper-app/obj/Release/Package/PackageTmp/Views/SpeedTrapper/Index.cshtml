@@ -1,0 +1,44 @@
+﻿@model speed_trapper_app.Models.SpeedTrapperModel
+@{
+    ViewBag.Title = "Speed Trap";
+}
+  @Html.HiddenFor(m => m.SpeedUnit)
+<h2>Speed Trap</h2>
+
+<table  cellspacing="5" cellpadding="5" >
+    <colgroup>
+        <col width="150px" />
+        <col width="70px" />
+        <col width="200px" />
+    </colgroup>
+    <tr>
+        <td>Overspeed (@Model.SpeedUnit) :</td>
+        <td>
+            <input type="text" class="numericTextBox" name="txtSpeed"  id="txtSpeed"  value="" maxlength="3" /> 
+         </td>
+        <td>
+            <input type="button" name="btnApply" id="btnApply" value="Apply"   />
+           
+        </td>
+    </tr>
+     <tr>
+        <td colspan="3"><span id="lblMsg" class="succMessage"></span> 
+         
+        </td>
+     </tr>
+</table>
+<hr />
+<table id="carTable" cellspacing="5" cellpadding="5" >
+    <tr></tr>
+ </table>
+
+
+@section styles {
+    <link href="@Url.Content("~/Content/SpeedTrapper.css")" rel="stylesheet" type="text/css" />
+
+    }
+@section Scripts {
+     <script src="@Url.Content("~/Scripts/jquery.signalR-2.1.2.min.js")" type="text/javascript"></script>
+    <script src="../signalr/hubs" type="text/javascript"></script>
+     <script src="@Url.Content("~/ScriptsCustom/SpeedTrapper.js")" type="text/javascript"></script>
+}
