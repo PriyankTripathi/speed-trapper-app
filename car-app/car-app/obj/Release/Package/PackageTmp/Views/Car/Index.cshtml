@@ -1,0 +1,27 @@
+﻿@model car_app.Models.CarModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<div style=" margin-left:20px;">
+   @Html.HiddenFor(m => m.Name)
+    @Html.HiddenFor(m => m.Speed)
+     @Html.HiddenFor(m => m.SpeedUnit)
+
+<h1>My Name is @Model.Name </h1>
+
+<span id="lblSpeed" class="speedBelow">@Model.Speed @Model.SpeedUnit</span>
+<br />
+<span id="lblMessage" class="speedBelowMessage"> (current speed)  </span>
+
+</div>
+
+@section styles {
+    <link href="@Url.Content("~/Content/Car.css")" rel="stylesheet" type="text/css" />
+
+    }
+@section Scripts {
+     <script src="@Url.Content("~/Scripts/jquery.signalR-2.1.2.min.js")" type="text/javascript"></script>
+     <script src="http://localhost:8080/signalr/hubs" type="text/javascript"></script>
+     <script src="@Url.Content("~/ScriptsCustom/Car.js")" type="text/javascript"></script>
+}
